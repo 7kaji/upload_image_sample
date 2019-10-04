@@ -4,14 +4,26 @@ require 'bundler'
 Bundler.require
 
 class App < Sinatra::Base
+  use Rack::Cors do
+    allow do
+      origins '*'
+      resource '*', methods: %i[get post]
+    end
+  end
+
   get '/' do
     status 200
   end
 
   post '/' do
+    # TODO: validation
     object = s3_bucket.object("#{SecureRandom.uuid}.png")
+    # TODO: async
     object.upload_file(params[:file][:tempfile], acl: 'public-read')
-    object.public_url
+    image_url = object.public_url
+
+    status 201
+    { image_url: image_url }.to_json
   end
 
   private
