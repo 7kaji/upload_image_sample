@@ -46,41 +46,41 @@ const App: React.FC = () => {
   return (
     <>
       <div className="App">
-      <h2>画像アップロード</h2>
-      <form onSubmit={handleSubmit}>
-        {acceptedFiles.length < 1 && (
-          <div {...getRootProps()} className="drag-area">
-            <input {...getInputProps()} />
-            {!isDragActive &&
-              'ここをクリックするか、画像をドラッグしてください'}
-            {isDragActive && !isDragReject && 'ドロップしてね'}
-            {isDragReject &&
-              'ごめんなさい。画像は png のみアップロード可能です'}
-            {isFileTooLarge && (
-              <div className="text-danger mt-2">
-                ファイルサイズが大きすぎます
-              </div>
-            )}
-          </div>
-        )}
-        <ul className="preview">
-          {acceptedFiles.length > 0 &&
-            acceptedFiles.map(acceptedFile => (
-              <li key={acceptedFile.name}>
-                <img
-                  src={URL.createObjectURL(acceptedFile)}
-                  alt=""
-                  height="100"
-                />
-              </li>
-            ))}
-        </ul>
-        <button
-          type="submit"
-        >
-          アップロード
-        </button>
-      </form>
+        <h2>画像アップロード</h2>
+        <form onSubmit={handleSubmit}>
+          {acceptedFiles.length < 1 && (
+            <div {...getRootProps()} className="drag-area">
+              <input {...getInputProps()} />
+              {!isDragActive &&
+                'ここをクリックするか、画像をドラッグしてください'}
+              {isDragActive && !isDragReject && 'ドロップしてね'}
+              {isDragReject &&
+                'ごめんなさい。画像は png のみアップロード可能です'}
+              {isFileTooLarge && (
+                <div className="text-danger mt-2">
+                  ファイルサイズが大きすぎます
+                </div>
+              )}
+            </div>
+          )}
+          <ul className="preview">
+            {acceptedFiles.length > 0 &&
+              acceptedFiles.map(acceptedFile => (
+                <li key={acceptedFile.name}>
+                  <img
+                    src={URL.createObjectURL(acceptedFile)}
+                    alt=""
+                    height="100"
+                  />
+                </li>
+              ))}
+          </ul>
+          <button
+            type="submit"
+          >
+            アップロード
+          </button>
+        </form>
       </div>
     </>
   );
