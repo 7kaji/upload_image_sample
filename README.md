@@ -2,10 +2,18 @@
 
 ## backend
 
+AWS (S3) + Ruby
+
 ```bash
 $ mv .env.sample .env
 $ bundle install --path vendor/bundle
 $ bundle exec rackup config.ru
+```
+GCP (GCS) + Go
+
+```bash
+$ mv .env.sample .env
+$ go run app.go
 ```
 
 ## frontend
