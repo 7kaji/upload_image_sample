@@ -25,7 +25,7 @@ func main() {
 		log.Fatal("Error loading .env file")
 	}
 
-	http.HandleFunc("/upload", handleUpload)
+	http.HandleFunc("/", handleUpload)
 	log.Fatal(http.ListenAndServe(":9292", nil))
 }
 
