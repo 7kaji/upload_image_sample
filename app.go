@@ -30,6 +30,7 @@ func main() {
 }
 
 func handleUpload(w http.ResponseWriter, r *http.Request) {
+	enableCors(&w)
 	if r.Method != http.MethodPost {
 		w.WriteHeader(http.StatusNotFound)
 		return
@@ -107,4 +108,9 @@ func upload(ctx context.Context, r io.Reader, projectID, bucket, name string, pu
 
 	attrs, err := obj.Attrs(ctx)
 	return obj, attrs, err
+}
+
+func enableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+	(*w).Header().Set("Access-Control-Allow-Methods", "POST")
 }
