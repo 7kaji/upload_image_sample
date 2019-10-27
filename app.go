@@ -31,6 +31,13 @@ func main() {
 
 func handleUpload(w http.ResponseWriter, r *http.Request) {
 	enableCors(&w)
+
+	// health check
+	if r.Method == http.MethodGet {
+		w.WriteHeader(http.StatusOK)
+		return
+	}
+
 	if r.Method != http.MethodPost {
 		w.WriteHeader(http.StatusNotFound)
 		return
