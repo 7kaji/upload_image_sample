@@ -23,5 +23,4 @@ $ cd frontend
 $ yarn install
 $ yarn run start
 ```
-
-[![Image from Gyazo](https://i.gyazo.com/77471a0cc25b6ead10abc0d3c145b19c.png)](https://gyazo.com/77471a0cc25b6ead10abc0d3c145b19c)
+[![Image from Gyazo](https://i.gyazo.com/4327d3d76b021f931f5159a1a8bc4639.png)](https://gyazo.com/4327d3d76b021f931f5159a1a8bc4639)

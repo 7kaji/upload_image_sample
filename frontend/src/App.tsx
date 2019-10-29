@@ -52,7 +52,10 @@ const App: React.FC = () => {
             <div {...getRootProps()} className="drag-area">
               <input {...getInputProps()} />
               {!isDragActive &&
-                'ここをクリックするか、画像をドラッグしてください'}
+                <div className="drag-text">
+                  ここをクリックするか、画像をドラッグしてください
+                </div>
+              }
               {isDragActive && !isDragReject && 'ドロップしてね'}
               {isDragReject &&
                 'ごめんなさい。画像は png のみアップロード可能です'}

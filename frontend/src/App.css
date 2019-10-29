@@ -30,10 +30,21 @@
   margin : 0 auto;
   height: 200px;
   width: 400px;
-  border: solid;
-  border-radius: 4px;
-  border-color: '#C4C4C4';
-  border-width: thin;
-  margin-top: 10px;
   text-align: center;
+  align-items: center;
+  border: 2px dashed #616061;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.5rem;
+  height: 500px;
+  justify-content: center;
+  line-height: 1.5;
+  margin-top: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.drag-text {
+  color: '#828282';
 }
